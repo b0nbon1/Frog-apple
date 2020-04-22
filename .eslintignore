@@ -1,0 +1,7 @@
+# Build
+build/
+dist/
+webpack/
+
+# Dependency
+node_modules/
