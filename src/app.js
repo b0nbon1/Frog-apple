@@ -1,25 +1,22 @@
-import React, { Component } from "react";
-import './app.scss';
+import React from 'react';
+// import { Provider } from 'react-redux';
+import World from './Features';
+// import store from './store';
 
-class App extends Component {
-    state = {
-        counter: 0
-    };
+const app = () => {
+  return (
+    // <Provider store={store}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <World />
+      </div>
+    // </Provider>
+  );
+};
 
-    handleClick = () => {
-        this.setState(prevState => {
-            return { counter: prevState.counter + 1 };
-        });
-    };
-    render() {
-        return (
-            <div className="App" data-testid='app-test'>
-                <h1>I'm configuring setting up webpack</h1>
-                <p>{`The count now is: ${this.state.counter}`}</p>
-                <button onClick={this.handleClick}>Click me</button>
-            </div>
-        );
-    }
-}
-
-export default App;
+export default app;

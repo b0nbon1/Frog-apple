@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "@babel/register": "^7.9.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
@@ -69,6 +70,17 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "axios": "^0.19.2",
+    "emotion": "^10.0.27",
+    "emotion-server": "^10.0.27",
+    "emotion-theming": "^10.0.27",
+    "facepaint": "^1.2.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "react-redux": "^7.2.0",
     "serve": "^11.3.0"
   },
   "repository": {
