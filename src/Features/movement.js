@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { css } from 'emotion';
 
 const wrapper = css`
@@ -21,39 +21,45 @@ const Item = css`
   font-size: 20px;
 `;
 
-const playGround = ({ apples, setApples, setMoves, moves }) => {
-  const [point, setPoint] = useState(1);
+const playGround = ({
+  apples,
+  setApples,
+  setMoves,
+  moves,
+  setFrogPosition,
+  frogPosition,
+}) => {
   const updateMove = () => {
     setMoves((prevState) => (apples.length && moves + 1) || prevState);
   };
   const handleKeyDown = (event) => {
     event.preventDefault();
-    if (event.keyCode === 39 && point < 100) {
+    if (event.keyCode === 39 && frogPosition < 100) {
       updateMove();
-      setPoint(point + 1);
+      setFrogPosition(frogPosition + 1);
       window.removeEventListener('keydown', handleKeyDown);
-    } else if (event.keyCode === 37 && point > 1) {
+    } else if (event.keyCode === 37 && frogPosition > 1) {
       updateMove();
-      setPoint(point - 1);
+      setFrogPosition(frogPosition - 1);
       window.removeEventListener('keydown', handleKeyDown);
-    } else if (event.keyCode === 38 && point - 10 >= 1) {
+    } else if (event.keyCode === 38 && frogPosition - 10 >= 1) {
       updateMove();
-      setPoint(point - 10);
+      setFrogPosition(frogPosition - 10);
       window.removeEventListener('keydown', handleKeyDown);
-    } else if (event.keyCode === 40 && point + 10 <= 100) {
+    } else if (event.keyCode === 40 && frogPosition + 10 <= 100) {
       updateMove();
-      setPoint(point + 10);
+      setFrogPosition(frogPosition + 10);
       window.removeEventListener('keydown', handleKeyDown);
     }
   };
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
-  }, [point]);
+  }, [frogPosition]);
 
-  if (apples.includes(point)) {
+  if (apples.includes(frogPosition)) {
     const arry = apples;
-    const index = arry.findIndex((i) => i === point);
+    const index = arry.findIndex((i) => i === frogPosition);
     arry.splice(index, 1);
     setApples(arry);
   }
@@ -63,7 +69,7 @@ const playGround = ({ apples, setApples, setMoves, moves }) => {
     divs.push(
       <div className={wrapper} key={i}>
         <div className={Item}>
-          {i === point && '🐸'}
+          {i === frogPosition && '🐸'}
           {apples.includes(i) && '🍎'}
         </div>
       </div>,

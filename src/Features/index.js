@@ -20,17 +20,31 @@ const Grid = css`
 const World = () => {
   const [apples, setApples] = useState([]);
   const [moves, setMoves] = useState(0);
+  const [frogPosition, setFrogPosition] = useState(1);
 
   useEffect(() => {
     setApples(shaffle());
   }, []);
 
+  const restart = () => {
+    setMoves(0);
+    setFrogPosition(1);
+    setApples(shaffle());
+  };
+
   return (
     <>
       <div className={Grid}>
-        {playGround({ apples, setApples, moves, setMoves })}
+        {playGround({
+          apples,
+          setApples,
+          moves,
+          setMoves,
+          frogPosition,
+          setFrogPosition,
+        })}
       </div>
-      {apples.length === 0 && <ScoreBoard moves={moves} />}
+      {apples.length === 0 && <ScoreBoard moves={moves} restart={restart} />}
     </>
   );
 };

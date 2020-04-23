@@ -43,7 +43,7 @@ const modal = css`
   diplay: block;
 `;
 
-const ScoreBoard = ({ moves }) => {
+const ScoreBoard = ({ moves, restart }) => {
   return (
     <>
       <div className={shadow} />
@@ -53,11 +53,7 @@ const ScoreBoard = ({ moves }) => {
           {''}
           {moves}
         </h1>
-        <button
-          onClick={() => window.location.reload()}
-          className={button}
-          type='button'
-        >
+        <button onClick={() => restart()} className={button} type='button'>
           Restart
         </button>
       </div>
