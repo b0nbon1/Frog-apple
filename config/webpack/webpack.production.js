@@ -1,6 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
 const paths = require('./paths');
 
@@ -44,7 +43,6 @@ module.exports = {
                 parallel: true,
                 sourceMap: true,
               }),
-            new OptimizeCSSAssetsPlugin({})
         ]
     },
     plugins: [

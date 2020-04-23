@@ -1,19 +1,15 @@
-# webpack-react-starter
+# Frogs 🐸  and apples 🍎 game
 
-## Quick start💥💥
+## Quick start 💥
 
-- run `git clone https://github.com/b0nbon1/webpack-react-starter.git .` on your project directory (NOOB thing😅)
+- Clone the repository
 - run `npm install` to install all dependencies
-- run `npm run dev` to confirm it's working (it will redirect to the browser and there is counter app)
+- run `npm run dev` to start in dev mode
+- Enjoy the game
 
-## Production 🚀🚀
+## Production 🚀
 
 - run `npm run build` to bundle your files for production
 - run `npm start`
-- To run tests, run `npm test`
-- Happy coding 🎉🎉🎊
+- open the application on your preferred browser.
 
-## Next 🧪🌡
-- [ ] serviceWorkers
-- [ ] eslint
-- [ ] prettier
